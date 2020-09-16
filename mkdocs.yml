@@ -44,6 +44,8 @@ extra:
       link: https://play.google.com/store/apps/details?id=io.kubenav.kubenav
     - icon: fontawesome/solid/desktop
       link: https://github.com/kubenav/kubenav/releases
+    - icon: material/kubernetes
+      link: https://github.com/kubenav/deploy
     - icon: fontawesome/brands/github
       link: https://github.com/kubenav/kubenav
     - icon: fontawesome/brands/docker
