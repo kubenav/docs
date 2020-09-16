@@ -1,0 +1,44 @@
+site_name: kubenav
+site_description: kubenav is the navigator for your Kubernetes clusters right in your pocket.
+repo_name: kubenav/kubenav
+repo_url: https://github.com/kubenav/kubenav
+copyright: Rico Berger
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: images/favicon.png
+  logo: images/logo.png
+  features:
+    - tabs
+  include_search_page: false
+  search_index_only: true
+
+nav:
+  - Home: index.md
+  - Mobile:
+    - Getting started: mobile/getting-started.md
+  - Desktop:
+    - Getting started: desktop/getting-started.md
+  - Kubernetes:
+    - Getting started: kubernetes/getting-started.md
+  - Developers:
+    - Getting started: developers/getting-started.md
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/kubenav
+    - icon: fontawesome/brands/github
+      link: https://github.com/kubenav/kubenav
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/kubenav/kubenav
+
+extra_css:
+  - stylesheets/extra.css

@@ -1,0 +1,9 @@
+:root {
+  --md-primary-fg-color:        #326ce5;
+  --md-primary-fg-color--light: #326ce5;
+  --md-primary-fg-color--dark:  #326ce5;
+}
+
+.app-badges {
+  height: 50px !important;
+}
