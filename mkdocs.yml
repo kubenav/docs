@@ -34,8 +34,16 @@ plugins:
 
 extra:
   social:
+    - icon: material/web
+      link: https://kubenav.io
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/kubenav
+    - icon: fontawesome/brands/app-store-ios
+      link: https://apps.apple.com/us/app/kubenav/id1494512160
+    - icon: fontawesome/brands/google-play
+      link: https://play.google.com/store/apps/details?id=io.kubenav.kubenav
+    - icon: fontawesome/solid/desktop
+      link: https://github.com/kubenav/kubenav/releases
     - icon: fontawesome/brands/github
       link: https://github.com/kubenav/kubenav
     - icon: fontawesome/brands/docker
