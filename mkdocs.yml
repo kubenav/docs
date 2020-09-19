@@ -24,8 +24,8 @@ nav:
     - Getting started: mobile/getting-started.md
   - Desktop:
     - Getting started: desktop/getting-started.md
-  - Kubernetes:
-    - Getting started: kubernetes/getting-started.md
+  - Web:
+    - Getting started: web/getting-started.md
   - Developers:
     - Getting started: developers/getting-started.md
 

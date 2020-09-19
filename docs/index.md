@@ -36,7 +36,7 @@ The app is developed using [Ionic Framework](https://ionicframework.com) and [Ca
 
 - [Mobile](mobile/getting-started.md):
 - [Desktop](desktop/getting-started.md):
-- [Kubernetes](kubernetes/getting-started.md):
+- [Web](web/getting-started.md):
 - [Developers](developers/getting-started.md):
 
 ## Repositories
