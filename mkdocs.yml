@@ -19,15 +19,32 @@ theme:
   search_index_only: true
 
 nav:
-  - Home: index.md
+  - Home:
+      - Home: index.md
+      - Screenshots: screenshots.md
   - Mobile:
-    - Getting started: mobile/getting-started.md
+      - Getting started: mobile/getting-started.md
+      - Cluster Configuration:
+          - Google: mobile/google.md
+          - Amazon Web Services: mobile/amazon-web-services.md
+          - Microsoft Azure: mobile/microsoft-azure.md
+          - OIDC: mobile/oidc.md
+          - Kubeconfig: mobile/kubeconfig.md
+          - Manual: mobile/manual.md
   - Desktop:
-    - Getting started: desktop/getting-started.md
+      - Getting started: desktop/getting-started.md
+      - Configuration: desktop/configuration.md
+      - Command-line flags: desktop/command-line-flags.md
   - Web:
-    - Getting started: web/getting-started.md
-  - Developers:
-    - Getting started: developers/getting-started.md
+      - Getting started: web/getting-started.md
+      - Kustomize: web/kustomize.md
+      - Helm: web/helm.md
+      - Configure access to multiple clusters: web/multi-cluster-access.md
+      - Command-line flags: web/command-line-flags.md
+  - Contributing:
+      - Getting started: contributing/getting-started.md
+      - Development: contributing/development.md
+      - Release: contributing/release.md
 
 plugins:
   - search

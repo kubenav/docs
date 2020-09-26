@@ -34,17 +34,15 @@ The app is developed using [Ionic Framework](https://ionicframework.com) and [Ca
 
 ## Content
 
-- [Mobile](mobile/getting-started.md):
-- [Desktop](desktop/getting-started.md):
-- [Web](web/getting-started.md):
-- [Developers](developers/getting-started.md):
+- [Mobile](mobile/getting-started.md): kubenav is available for iOS and Android via the [App Store](https://apps.apple.com/us/app/kubenav/id1494512160) and [Google Play](https://play.google.com/store/apps/details?id=io.kubenav.kubenav). The documentaion for the mobile version can be found in this section.
+- [Desktop](desktop/getting-started.md): This section contains the documentation for the [Desktop](https://github.com/kubenav/kubenav/releases) version of kubenav.
+- [Web](web/getting-started.md): If you want to use the web version of kubenav, this is your starting point.
+- [Contributing](contributing/getting-started.md): We love your input. If you want to start contributing, this is your place to go.
 
 ## Repositories
 
-- [kubenav/docs](https://github.com/kubenav/docs):
-- [kubenav/kubenav](https://github.com/kubenav/kubenav):
-- [kubenav/helm-repository](https://github.com/kubenav/helm-repository):
-- [kubenav/deploy](https://github.com/kubenav/deploy):
-- [kubenav/kubenav.io](https://github.com/kubenav/kubenav.io):
-- [kubenav/kubenav-plugin](https://github.com/kubenav/kubenav-plugin):
-- [kubenav/bind](https://github.com/kubenav/bind):
+- [kubenav/kubenav](https://github.com/kubenav/kubenav): The main repository for kubenav. This repository contains the complete code for the mobile, desktop and web version of kubenav.
+- [kubenav/deploy](https://github.com/kubenav/deploy): This repository contains the Kustomize files and the Helm Chart for kubenav.
+- [kubenav/docs](https://github.com/kubenav/docs): This repository contains the documentation for kubenav, which is available at [docs.kubenav.io](https://docs.kubenav.io).
+- [kubenav/kubenav.io](https://github.com/kubenav/kubenav.io): This repository contains the landing page for kubenav and is available at [kubenav.io](https://kubenav.io).
+- [kubenav/helm-repository](https://github.com/kubenav/helm-repository): This repository contains all published Helm Charts.
