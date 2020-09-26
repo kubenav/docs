@@ -4,7 +4,7 @@
   <img src="https://raw.githubusercontent.com/kubenav/kubenav/master/utils/assets/github-logo.png" width="200" />
   <br><br>
 
-  <b>kubenav</b> is the navigator for your <b>Kubernetes</b> clusters right in your pocket. kubenav is a <b>mobile and desktop</b> app to manage Kubernetes clusters and to get an overview of the status of your resources.
+  <b>kubenav</b> is the navigator for your <b>Kubernetes</b> clusters right in your pocket. kubenav is a <b>mobile, desktop and web</b> app to manage Kubernetes clusters and to get an overview of the status of your resources.
 
   <p>
     <a href="https://apps.apple.com/us/app/kubenav/id1494512160" target="_blank"><img class="app-badges" src="https://raw.githubusercontent.com/kubenav/kubenav/master/utils/assets/app-store-badge.png"></a>
@@ -15,7 +15,7 @@
   <img src="https://raw.githubusercontent.com/kubenav/kubenav/master/utils/assets/github-screenshot.png" width="100%" />
 </div>
 
-kubenav is a mobile and desktop app to  manage Kubernetes clusters. The app provides an overview of all resources in a Kubernetes clusters, including current status information for workloads. The details view for resources provides additional information. It is possible to view logs and events or to get a shell into a container. You can also edit and delete resources or scale your workloads within the app.
+kubenav is a mobile, desktop and web app to manage Kubernetes clusters. The app provides an overview of all resources in a Kubernetes clusters, including current status information for workloads. The details view for resources provides additional information. It is possible to view logs and events or to get a shell into a container. You can also edit and delete resources or scale your workloads within the app.
 
 The app is developed using [Ionic Framework](https://ionicframework.com) and [Capacitor](https://capacitor.ionicframework.com). The frontend part of the app is implemented using TypeScript and React functional components. The backend part uses [Go mobile](https://github.com/golang/go/wiki/Mobile) for communication with the Kubernetes API server and Cloud Providers. So it is possible to achieve nearly 100% code sharing between the mobile and desktop implementation of kubenav.
 
@@ -31,6 +31,8 @@ The app is developed using [Ionic Framework](https://ionicframework.com) and [Ca
 - **Logs:** View the logs of a container or stream the logs in realtime.
 - **Terminal:** Get a shell into a container, right from your phone.
 - **Manage multiple Clusters:** Add multiple clusters via `kubeconfig` or your prefered Cloud Provider, including Google, AWS and Azure.
+- **Port-Forwarding:** Create a port-forwarding connection to one of your Pods and open the served page in your browser.
+- **Prometheus Integration:** kubenav allows you to view your Prometheus metrics directly in the dashboard via the Prometheus plugin.
 
 ## Content
 
