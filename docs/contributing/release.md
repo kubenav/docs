@@ -45,3 +45,11 @@ We are building the binaries for each submitted PR and on a [nightly schedule](h
 We are also pushing a new Docker image for each master commit to [Docker Hub](https://hub.docker.com/r/kubenav/kubenav). The images are taged with the corresponding commit hash.
 
 To publish a new beta version for iOS and Android you can follow the same steps as for a normal release, except that you have to run `make release-beta`. The beta versions are available via [Apple Testflight](https://testflight.apple.com/join/RQUFGkHi) and [Google Play](https://play.google.com/apps/testing/io.kubenav.kubenav).
+
+## Changelog
+
+The changelog will be generated via GitHub Action, but sometimes it is useful to generate the `CHANGELOG.md` file locally, before a new tag is created. This can be done with the following command:
+
+```sh
+docker run -it --rm -v "$(pwd)":/usr/local/src/your-app ferrarimarco/github-changelog-generator --user=kubenav --project=kubenav --token=<TOKEN>
+```
