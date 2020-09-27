@@ -13,15 +13,12 @@ theme:
     code: Roboto Mono
   favicon: images/favicon.png
   logo: images/logo.png
-  features:
-    - tabs
   include_search_page: false
   search_index_only: true
 
 nav:
-  - Home:
-      - Home: index.md
-      - Screenshots: screenshots.md
+  - Home: index.md
+  - Screenshots: screenshots.md
   - Mobile:
       - Getting started: mobile/getting-started.md
       - Cluster Configuration:
