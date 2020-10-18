@@ -1,7 +1,15 @@
-kubenav requires [Node v8.6.0](https://nodejs.org/) or later, and NPM version 5.6.0 or later (which is usually automatically installed with the required version of Node). If you have Node and NPM installed, install Ionic CLI:
+kubenav requires [Node v8.6.0](https://nodejs.org/) or later, and NPM version 5.6.0 or later (which is usually automatically installed with the required version of Node). 
+
+If there is a previous installation of the Ionic CLI installed, it will need to be uninstalled due to a change in package name for ionic/cli:
 
 ```sh
-npm install -g ionic
+npm uninstall -g ionic
+```
+
+If you have Node and NPM installed, install Ionic CLI:
+
+```sh
+npm install -g @ionic/cli
 ```
 
 Besides Node, kubenav requires [Go 1.14](https://golang.org) or later and [Go mobile](https://github.com/golang/go/wiki/Mobile), which can be installed using the following commands:
