@@ -32,7 +32,7 @@ helm upgrade --install --namespace kubenav kubenav kubenav/kubenav
 | `podSecurityContext` | Security context for the kubenav pod. | `{}` |
 | `securityContext` | Security context for the kubenav container. | `{}` |
 | `service.type` | Type of the service which is created. | `ClusterIP` |
-| `service.port` | Port of the service which is created. | `80` |
+| `service.port` | Port of the service which is created. | `14122` |
 | `ingress.enabled` | Create an ingress. | `false` |
 | `ingress.annotations` | Additional annotations for the ingress. | `{}` |
 | `ingress.hosts` | Hosts for the ingress. | `[]` |
