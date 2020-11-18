@@ -14,7 +14,7 @@ helm upgrade --install --namespace kubenav kubenav kubenav/kubenav
 | ----- | ----------- | ------- |
 | `replicaCount` | Number of replicas which should be created. | `1` |
 | `image.repository` | The repository of the Docker image. | `kubenav/kubenav` |
-| `image.tag` | The tag of the Docker image which should be used. | `3.0.0` |
+| `image.tag` | The tag of the Docker image which should be used. | `3.1.0` |
 | `image.pullPolicy` | The pull policy for the Docker image, | `IfNotPresent` |
 | `imagePullSecrets` | Secrets which can be used to pull the Docker image. | `[]` |
 | `nameOverride` | Expand the name of the chart. | `""` |
