@@ -25,6 +25,7 @@ nav:
           - Google: mobile/google.md
           - Amazon Web Services: mobile/amazon-web-services.md
           - Microsoft Azure: mobile/microsoft-azure.md
+          - DigitalOcean: mobile/digital-ocean.md
           - OIDC: mobile/oidc.md
           - Kubeconfig: mobile/kubeconfig.md
           - Manual: mobile/manual.md
