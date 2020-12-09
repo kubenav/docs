@@ -1,3 +1,5 @@
+# Settings
+
 kubenav provides multiple settings, to customize the look and usage of the app.
 
 ## General

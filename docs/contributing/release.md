@@ -1,3 +1,5 @@
+# Releases
+
 Every new release is created from the `master` branch. To create a new release the `version` field in the `package.json` file must be updated and a new tag must be set. This process is automated via a [`Makefile`](https://github.com/kubenav/kubenav/blob/master/Makefile):
 
 ```sh
@@ -8,7 +10,7 @@ make release-major
 
 When the tag is pushed the changelog will be generated via GitHub Action and saved to the [CHANGELOG.md](./CHANGELOG.md) file. When the changelog was generated a new GitHub release can be created with the following naming scheme and the changelog for the current tag as description:
 
-```
+```txt
 Version <TAG> (yyyy-mm-dd)
 ```
 

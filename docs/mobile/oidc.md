@@ -1,3 +1,5 @@
+# OIDC
+
 If you are using an OIDC provider to manage the access to your Kubernetes cluster, you can configure this in the **OIDC Provider** section within the **Add Clusters** modal:
 
 | Value | Description |

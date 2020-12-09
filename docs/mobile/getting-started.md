@@ -1,3 +1,5 @@
+# Getting started
+
 The mobile version of kubenav is available for iOS and Android. The app can be downloaded from the [App Store](https://apps.apple.com/us/app/kubenav/id1494512160) and [Google Play](https://play.google.com/store/apps/details?id=io.kubenav.kubenav).
 
 <div align="center">

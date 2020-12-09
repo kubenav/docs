@@ -1,3 +1,5 @@
+# Settings
+
 kubenav provides multiple settings, to customize the look and usage of the app.
 
 ## General
@@ -5,6 +7,7 @@ kubenav provides multiple settings, to customize the look and usage of the app.
 | Setting | Description | Values | Default |
 | ------- | ----------- | ------ | ------- |
 | Theme | Set the theme which should be used for kubenav. | `System`, `Dark`, `Light` | `System` |
+| Authentication | Enable authentication via fingerprint or face recognation. | `true`, `false` | `false` |
 | Request Timeout (in seconds) | The maximum time in seconds for a request. | `10` - `120` | `60` |
 | Terminal Font Size (in px) | The font size for the terminal. | `8` - `48` | `12` |
 | Terminal Scrollback (in lines) | The maximum number of lines to scrollback in the terminal. | `1000` - `50000` | `10000` |

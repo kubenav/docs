@@ -1,3 +1,5 @@
+# Helm
+
 You can deploy kubenav into your Kubernetes cluster via [Helm](https://helm.sh):
 
 ```sh
@@ -8,7 +10,7 @@ kubectl create namespace kubenav
 helm upgrade --install --namespace kubenav kubenav kubenav/kubenav
 ```
 
-### Values
+## Values
 
 | Value | Description | Default |
 | ----- | ----------- | ------- |

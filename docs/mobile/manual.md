@@ -1,3 +1,5 @@
+# Manual
+
 This method can be used, when you want to manually configure each cluster.
 
 | Value | Description |

@@ -1,3 +1,5 @@
+# Configuration
+
 The desktop version of kubenav will automatic load all configured clusters from the default Kubeconfig file at `~/.kube/config` or the `KUBECONFIG` environment variable. If you want to use another Kubeconfig file, you can start kubenav with the `--kubeconfig` flag.
 
 You can also use the `--kubeconfig.include` and `--kubeconfig.exclude` flag to load Kubeconfig files from multiple locations by glob. The following example loads all Kubeconfig files which are starting with `kube` from the `~/Documents/kubeconfigs-prod` and `~/Documents/kubeconfigs-dev` folder:

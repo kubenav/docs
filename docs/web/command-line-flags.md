@@ -1,6 +1,8 @@
+# Command-line flags
+
 The Docker image for kubenav supports the following command-line flags:
 
-```
+```txt
 kubenav - the navigator for your Kubernetes clusters right in your pocket.
 
 Usage:

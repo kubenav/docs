@@ -1,3 +1,5 @@
+# Google
+
 You can directly import your GKA clusters from Google Cloud. To import your GKE clusters you have to provide a valide **Client ID** from a Google OAuth 2.0 application. The instructions on how to configure such an application can be found in the following.
 
 | Value | Description |
@@ -37,7 +39,7 @@ Use the following settings for Android:
 - **SHA-1 certificate fingerprint:** B1:DA:29:60:CC:C8:18:A4:67:AD:BB:34:77:BB:2C:61:16:BA:CD:6B
 - **Package name:** io.kubenav.kubenav
 
-**Attention: **If you get an error message *"Duplicate fingerprint: The fingerprint you specified is already used by an Android OAuth2 client ID in this project or another project"* select another SHA-1 certificate fingerprint.
+> **Attention:** If you get an error message *"Duplicate fingerprint: The fingerprint you specified is already used by an Android OAuth2 client ID in this project or another project"* select another SHA-1 certificate fingerprint.
 
 When you confirm your settings, via a click on the **Create** button, a modal opens with the **Client ID** you can use for kubenav.
 

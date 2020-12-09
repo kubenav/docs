@@ -1,3 +1,5 @@
+# Getting started
+
 We are providing prebuilt binaries for macOS, Linux and Windows. The binaries for the desktop version of kubenav are available through the release page in the [kubenav/kubenav](https://github.com/kubenav/kubenav/releases) repository.
 
 <div align="center">

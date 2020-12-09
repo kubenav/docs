@@ -1,4 +1,4 @@
-# Welcome to the Documentation for kubenav
+# Welcome to the documentation for kubenav
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/kubenav/kubenav/master/utils/assets/github-logo.png" width="200" />

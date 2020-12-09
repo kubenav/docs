@@ -1,3 +1,5 @@
+# Kubeconfig
+
 You can also import a Kubeconfig file to add a new cluster to the kubenav app.
 
 | Value | Description |

@@ -1,3 +1,5 @@
+# Kustomize
+
 You can deploy kubenav into your Kubernetes cluster via [Kustomize](https://kustomize.io):
 
 ```sh

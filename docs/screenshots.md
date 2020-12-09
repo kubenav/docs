@@ -1,3 +1,5 @@
+# Screenshots
+
 On the following page you can found some screenshots for the desktop and mobile version of kubenav.
 
 ## Desktop
