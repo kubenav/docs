@@ -29,19 +29,20 @@ nav:
           - OIDC: mobile/oidc.md
           - Kubeconfig: mobile/kubeconfig.md
           - Manual: mobile/manual.md
+      - Cluster Management: mobile/cluster-management.md
       - Settings: mobile/settings.md
   - Desktop:
       - Getting started: desktop/getting-started.md
       - Configuration: desktop/configuration.md
       - Settings: desktop/settings.md
-      - Command-line flags: desktop/command-line-flags.md
+      - Command-Line Flags: desktop/command-line-flags.md
   - Web:
       - Getting started: web/getting-started.md
       - Kustomize: web/kustomize.md
       - Helm: web/helm.md
-      - Configure access to multiple clusters: web/multi-cluster-access.md
+      - Configure Access to Multiple Clusters: web/multi-cluster-access.md
       - Settings: web/settings.md
-      - Command-line flags: web/command-line-flags.md
+      - Command-Line Flags: web/command-line-flags.md
   - Contributing:
       - Getting started: contributing/getting-started.md
       - Development: contributing/development.md

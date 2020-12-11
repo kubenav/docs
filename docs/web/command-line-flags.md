@@ -1,4 +1,4 @@
-# Command-line flags
+# Command-Line Flags
 
 The Docker image for kubenav supports the following command-line flags:
 

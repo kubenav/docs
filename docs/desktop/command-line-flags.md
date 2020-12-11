@@ -1,4 +1,4 @@
-# Command-line flags
+# Command-Line Flags
 
 The desktopversion of kubenav supports the following command-line flags:
 
