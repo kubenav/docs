@@ -43,6 +43,9 @@ nav:
       - Configure Access to Multiple Clusters: web/multi-cluster-access.md
       - Settings: web/settings.md
       - Command-Line Flags: web/command-line-flags.md
+  - Plugins:
+      - Helm: plugins/helm.md
+      - Prometheus: plugins/prometheus.md
   - Contributing:
       - Getting started: contributing/getting-started.md
       - Development: contributing/development.md

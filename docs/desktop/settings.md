@@ -30,6 +30,7 @@ kubenav provides multiple settings, to customize the look and usage of the app.
 | Namespace | The namespace, where Prometheus is running. | `monitoring` |
 | Selector | The selector, which matches the Prometheus Pod. | `app=prometheus` |
 | Port | The port, where the Prometheus API is exposed. | `9090` |
+| Dashboards Namespace | The namespace, where kubenav should look for dashboards. | `kubenav` |
 
 ## Proxy
 

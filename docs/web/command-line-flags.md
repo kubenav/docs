@@ -14,13 +14,14 @@ Available Commands:
   version     Print version information for kubenav.
 
 Flags:
-      --debug                              Enable debug mode.
-      --debug.ionic string                 Path to the Ionic app. (default "build")
-  -h, --help                               help for kubenav
-      --incluster                          Use the in cluster configuration.
-      --kubeconfig string                  Optional Kubeconfig file.
-      --plugin.prometheus.address string   The address for Prometheus.
-      --plugin.prometheus.enabled          Enable the Prometheus plugin.
+      --debug                                           Enable debug mode.
+      --debug.ionic string                              Path to the Ionic app. (default "build")
+  -h, --help                                            help for kubenav
+      --incluster                                       Use the in cluster configuration.
+      --kubeconfig string                               Optional Kubeconfig file.
+      --plugin.prometheus.address string                The address for Prometheus.
+      --plugin.prometheus.dashboards-namespace string   The namespace, where kubenav should look for dashboards. (default "kubenav")
+      --plugin.prometheus.enabled                       Enable the Prometheus plugin.
 
 Use "kubenav [command] --help" for more information about a command.
 ```
