@@ -36,8 +36,6 @@ data:
   title: "NATS"
   # Description of the dashboard.
   description: "Dashboard for NATS Metrics"
-  # Link can be used to set the value of a variable, when the dashboard is referenced in a resource.
-  link: "Namespace=$.metadata.namespace&Pod=$.metadata.name"
   # Array of variables.
   variables: |
     [
@@ -115,7 +113,35 @@ data:
 | `type` | The type of the chart. This must be `singlestat` or `area`, other types are currently not supported. |
 | `queries` | An array of queries, which are used for the chart. Each query must contain a `label` and a `query`. |
 
-## Examples
+### Reference a Dashboard
+
+You can also add a reference to a dashboard within a resource. For that you have to add the `kubenav.io/dashboards` annotation to the resource. The value is a comma seperated list of the ConfigMap names of the dashboards plus an optional query parameter.
+
+For example to add the *NGINX Ingress Controller* dashboard to an Ingress, the resource has to look as follows:
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    # Add the NGINX Ingress Controller and NGINX Ingress Controller: Request Handling Performance dashboard to the Ingress.
+    # Set the Ingress variable to kubenav, so that the Ingress is selected in the dashboard.
+    kubenav.io/dashboards: nginx-ingress-dashboard?Ingress=kubenav,nginx-ingress-request-handling-performance-dashboard?Ingress=kubenav
+    kubernetes.io/ingress.class: nginx
+  name: kubenav
+  namespace: kubenav
+spec:
+  rules:
+  - host: dashboard.kubenav.io
+    http:
+      paths:
+      - backend:
+          serviceName: kubenav
+          servicePort: http
+        path: /
+```
+
+### Examples
 
 In the [kubenav/deploy](https://github.com/kubenav/deploy/tree/master/dashboards) repository you can find some example dashboards, which are ready to use.
 
