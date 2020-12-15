@@ -113,7 +113,7 @@ data:
 | `type` | The type of the chart. This must be `singlestat` or `area`, other types are currently not supported. |
 | `queries` | An array of queries, which are used for the chart. Each query must contain a `label` and a `query`. |
 
-### Reference a Dashboard
+### Annotations
 
 You can also add a reference to a dashboard within a resource. For that you have to add the `kubenav.io/dashboards` annotation to the resource. The value is a comma seperated list of the ConfigMap names of the dashboards plus an optional query parameter.
 
@@ -126,7 +126,8 @@ metadata:
   annotations:
     # Add the NGINX Ingress Controller and NGINX Ingress Controller: Request Handling Performance dashboard to the Ingress.
     # Set the Ingress variable to kubenav, so that the Ingress is selected in the dashboard.
-    kubenav.io/dashboards: nginx-ingress-dashboard?Ingress=kubenav,nginx-ingress-request-handling-performance-dashboard?Ingress=kubenav
+    # The second dashboard uses the name of the Ingress as value for the Ingress variable.
+    kubenav.io/dashboards: nginx-ingress-dashboard?Ingress=kubenav,nginx-ingress-request-handling-performance-dashboard?Ingress=$.metadata.name
     kubernetes.io/ingress.class: nginx
   name: kubenav
   namespace: kubenav
