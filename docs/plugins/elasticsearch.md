@@ -20,9 +20,9 @@ You can specify fields to search in the query syntax:
 
 - where the `status` field contains `active`
 
-    ```txt
-    status:active
-    ```
+```txt
+status:active
+```
 
 - where the `title` field contains `quick` or `brown`
 
