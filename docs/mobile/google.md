@@ -39,7 +39,8 @@ Use the following settings for Android:
 - **SHA-1 certificate fingerprint:** B1:DA:29:60:CC:C8:18:A4:67:AD:BB:34:77:BB:2C:61:16:BA:CD:6B
 - **Package name:** io.kubenav.kubenav
 
-> **Attention:** If you get an error message *"Duplicate fingerprint: The fingerprint you specified is already used by an Android OAuth2 client ID in this project or another project"* select another SHA-1 certificate fingerprint.
+!!! attention
+    If you get an error message *"Duplicate fingerprint: The fingerprint you specified is already used by an Android OAuth2 client ID in this project or another project"* select another SHA-1 certificate fingerprint.
 
 When you confirm your settings, via a click on the **Create** button, a modal opens with the **Client ID** you can use for kubenav.
 

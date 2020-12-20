@@ -46,6 +46,7 @@ nav:
   - Plugins:
       - Helm: plugins/helm.md
       - Prometheus: plugins/prometheus.md
+      - Elasticsearch: plugins/elasticsearch.md
   - Contributing:
       - Getting started: contributing/getting-started.md
       - Development: contributing/development.md
@@ -53,6 +54,9 @@ nav:
 
 plugins:
   - search
+
+markdown_extensions:
+  - admonition
 
 extra:
   social:

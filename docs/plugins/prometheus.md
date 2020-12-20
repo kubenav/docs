@@ -146,14 +146,19 @@ spec:
 
 In the [kubenav/deploy](https://github.com/kubenav/deploy/tree/master/dashboards) repository you can find some example dashboards, which are ready to use.
 
-- [cert-manager](https://github.com/kubenav/deploy/blob/master/dashboards/cert-manager-dashboard.yaml)
-- [Filebeat](https://github.com/kubenav/deploy/blob/master/dashboards/filebeat-dashboard.yaml)
-- [Jaeger](https://github.com/kubenav/deploy/blob/master/dashboards/jaeger-dashboard.yaml)
-- [NATS](https://github.com/kubenav/deploy/blob/master/dashboards/nats-dashboard.yaml)
-- [NGINX Ingress Controller](https://github.com/kubenav/deploy/blob/master/dashboards/nginx-ingress-dashboard.yaml)
-- [NGINX Ingress Controller: Request Handling Performance](https://github.com/kubenav/deploy/blob/master/dashboards/nginx-ingress-request-handling-performance-dashboard.yaml)
-- [Redis](https://github.com/kubenav/deploy/blob/master/dashboards/redis-dashboard.yaml)
-- [Redis Sentinel](https://github.com/kubenav/deploy/blob/master/dashboards/redis-sentinel-dashboard.yaml)
-- [Reloader](https://github.com/kubenav/deploy/blob/master/dashboards/reloader-dashboard.yaml)
+- `blackbox-exporter-dashboard.yaml`: Dashboard for [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter)
+- `cert-manager-dashboard.yaml`: Dashboard for [cert-manager](https://cert-manager.io)
+- `filebeat-dashboard.yaml`: Dashboard for [Filebeat](https://github.com/trustpilot/beat-exporter)
+- `jaeger-dashboard.yaml`: Dashboard for [Jaeger](https://www.jaegertracing.io)
+- `nats-dashboard.yaml`: Dashboard for [NATS](https://nats.io)
+- `nginx-ingress-dashboard.yaml`: Dashboard for [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+- `nginx-ingress-request-handling-performance-dashboard.yaml`: Performance dashboard for [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+- `redis-dashboard.yaml`: Dashboard for [Redis](https://github.com/oliver006/redis_exporter)
+- `redis-sentinel-dashboard.yaml`: Dashboard for [Redis Sentinel](https://github.com/leominov/redis_sentinel_exporter)
+- `reloader-dashboard.yaml`: Dashboard for [Reloader](https://github.com/stakater/Reloader)
+- `thanos-compactor-dashboard.yaml`: Dashboard for [Thanos Compactor](https://thanos.io/tip/components/compact.md/)
+- `thanos-querier-dashboard.yaml`: Dashboard for [Thanos Querier](https://thanos.io/tip/components/query.md/)
+- `thanos-receiver-dashboard.yaml`: Dashboard for [Thanos Receiver](https://thanos.io/tip/components/receive.md/)
+- `thanos-store-dashboard.yaml`: Dashboard for [Thanos Store](https://thanos.io/tip/components/store.md/)
 
 ![Dashboard](../images/plugins/prometheus-dashboard.png)

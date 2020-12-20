@@ -10,4 +10,5 @@ kubenav --kubeconfig.include ~/Documents/kubeconfigs-prod/kube*,~/Documents/kube
 
 The `--kubeconfig.sync` flag can be used to write context changes back to your Kubeconfig file, so the context is also changed in your terminal.
 
-> **Attention:** kubenav is based on Electron and go-astilectron, which will be downloaded on the first start of the app. Therefore the first start of the app can take a bit longer with a slow internet connection.
+!!! attention
+    kubenav is based on Electron and go-astilectron, which will be downloaded on the first start of the app. Therefore the first start of the app can take a bit longer with a slow internet connection.

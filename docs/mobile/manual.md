@@ -78,4 +78,5 @@ kubectl get secret $SECRET_NAME -o=jsonpath='{.data.token}' | base64 --decode
 
 The output from the first command can now be used for the `Certificate Authority Data` field and the output from the second command for the `Token` field.
 
-> **Attention:** The specified RBAC rules from the example provide full cluster access wihtout any restrictions. More information can be found in the Kubernets documentation: [Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+!!! attention
+    The specified RBAC rules from the example provide full cluster access wihtout any restrictions. More information can be found in the Kubernets documentation: [Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).

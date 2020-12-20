@@ -31,7 +31,20 @@ kubenav provides multiple settings, to customize the look and usage of the app.
 | Namespace | The namespace, where Prometheus is running. | `monitoring` |
 | Selector | The selector, which matches the Prometheus Pod. | `app=prometheus` |
 | Port | The port, where the Prometheus API is exposed. | `9090` |
+| Username | Username for Prometheus, when the Prometheus endpoint is protected via Basic Authentication. | |
+| Password | Password for Prometheus, when the Prometheus endpoint is protected via Basic Authentication. | |
 | Dashboards Namespace | The namespace, where kubenav should look for dashboards. | `kubenav` |
+
+## Elasticsearch
+
+| Setting | Description | Default |
+| ------- | ----------- | ------- |
+| Enabled | Enables or disables the Elasticsearch plugin. | `false` |
+| Namespace | The namespace, where Elasticsearch is running. | `logging` |
+| Selector | The selector, which matches the Elasticsearch Pod. | `app=elasticsearch` |
+| Port | The port, where the Elasticsearch API is exposed. | `9200` |
+| Username | Username for Elasticsearch, when the Elasticsearch endpoint is protected via Basic Authentication. | |
+| Password | Password for Elasticsearch, when the Elasticsearch endpoint is protected via Basic Authentication. | |
 
 ## Proxy
 

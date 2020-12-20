@@ -1,6 +1,7 @@
 # Configure Access to Multiple Clusters
 
-> **Attention:** When kubenav runs inside a Kubernetes cluster with the `--kubeconfig` flag and the Prometheus plugin enabled (`--plugin.prometheus.enabled`) it will only use the Prometheus instance, which is running in the same cluster.
+!!! attention
+    When kubenav runs inside a Kubernetes cluster with the `--kubeconfig` flag and the Prometheus plugin enabled (`--plugin.prometheus.enabled`) it will only use the Prometheus instance, which is running in the same cluster.
 
 ## Kustomize
 

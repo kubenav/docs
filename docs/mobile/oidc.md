@@ -10,7 +10,8 @@ If you are using an OIDC provider to manage the access to your Kubernetes cluste
 | Certificate Authority | If your OIDC provider uses a self signed certificate, you must provide this certificate. This field is optional for OIDC providers without a self signed certificate. |
 | Refresh Token | You can provide a valid refresh token to skip the login process. This field is optional. If the field isn't provided you will be redirected to your OIDC provider to get a refresh token. |
 
-> **Attention:** You must allow `https://kubenav.io/oidc.html` as a valid redirect url in the settings of your OIDC provider.
+!!! attention
+    You must allow `https://kubenav.io/oidc.html` as a valid redirect url in the settings of your OIDC provider.
 
 When the login process within your OIDC provider is finished, you have to provide the details of your Kubernetes cluster:
 

@@ -42,7 +42,8 @@ You can also change a cluster, by **selecting the current cluster (1)** from the
 
 You can change the namespace in each **list view** of a namespaced resource. To change the namespace, select the **options icon (1)** and then the namespace from from the **popover (2)**.
 
-> **Attention:** This options requires the permission to list all namespaces. If you haven't this right you can choose the method from below, to change the namespace.
+!!! attention
+    This options requires the permission to list all namespaces. If you haven't this right you can choose the method from below, to change the namespace.
 
 ![Change Namespace 1](../images/mobile/cluster-management-change-namespace-1.png)
 
