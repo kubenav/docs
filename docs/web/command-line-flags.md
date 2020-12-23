@@ -23,6 +23,10 @@ Flags:
       --plugin.elasticsearch.enabled                    Enable the Elasticsearch plugin.
       --plugin.elasticsearch.password string            The password for Elasticsearch.
       --plugin.elasticsearch.username string            The username for Elasticsearch.
+      --plugin.jaeger.address string                    The address for Jaeger.
+      --plugin.jaeger.enabled                           Enable the Jaeger plugin.
+      --plugin.jaeger.password string                   The password for Jaeger.
+      --plugin.jaeger.username string                   The username for Jaeger.
       --plugin.prometheus.address string                The address for Prometheus.
       --plugin.prometheus.dashboards-namespace string   The namespace, where kubenav should look for dashboards. (default "kubenav")
       --plugin.prometheus.enabled                       Enable the Prometheus plugin.

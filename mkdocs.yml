@@ -47,6 +47,7 @@ nav:
       - Helm: plugins/helm.md
       - Prometheus: plugins/prometheus.md
       - Elasticsearch: plugins/elasticsearch.md
+      - Jaeger: plugins/jaeger.md
   - Contributing:
       - Getting started: contributing/getting-started.md
       - Development: contributing/development.md

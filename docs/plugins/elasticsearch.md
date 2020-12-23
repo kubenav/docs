@@ -161,7 +161,7 @@ Assuming `now` is `2001-01-01 12:00:00`, some examples are:
 
 ## Annotations
 
-You can add annotations to your resources, to define Elasticsearch queries within these resources. The queries can be defined via the `kubenav.io/elasticsearch-queries` annotations.
+You can add an annotation to your resources, to define Elasticsearch queries within these resources. The queries can be defined via the `kubenav.io/elasticsearch-queries` annotation.
 
 The annotation requires a JSON array, where each item in the array can use the following fields:
 
