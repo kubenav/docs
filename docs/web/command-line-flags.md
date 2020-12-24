@@ -44,5 +44,7 @@ The following command-line flags can be replaced via environment variables:
 | ----------------- | -------------------- |
 | `--plugin.elasticsearch.password` | `KUBENAV_ELASTICSEARCH_PASSWORD` |
 | `--plugin.elasticsearch.username` | `KUBENAV_ELASTICSEARCH_USERNAME` |
+| `--plugin.jaeger.password` | `KUBENAV_JAEGER_PASSWORD` |
+| `--plugin.jaeger.username` | `KUBENAV_JAEGER_USERNAME` |
 | `--plugin.prometheus.password` | `KUBENAV_PROMETHEUS_PASSWORD` |
 | `--plugin.prometheus.username` | `KUBENAV_PROMETHEUS_USERNAME` |
