@@ -55,7 +55,7 @@ kubenav provides multiple settings, to customize the look and usage of the app.
 | Port | The port, where the Jaeger API is exposed. | `16686` |
 | Username | Username for Jaeger, when the Jaeger endpoint is protected via Basic Authentication. | |
 | Password | Password for Jaeger, when the Jaeger endpoint is protected via Basic Authentication. | |
-| Address Postfix | Postfix for the Jaeger API. The request URL for the traces is `http://<JAEGER_POD><ADDRESS_POSTFIX>/api/traces`. | |
+| Query Base Path | The base path for all Jaeger Query HTTP routes. This must be the same as the `--query.base-path` command line parameter or the `QUERY_BASE_PATH` environment variable. | |
 
 ## Proxy
 
