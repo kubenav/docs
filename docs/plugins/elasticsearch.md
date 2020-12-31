@@ -168,7 +168,6 @@ The annotation requires a JSON array, where each item in the array can use the f
 | Field | Description | Default Value |
 | ----- | ----------- | ------------- |
 | `title` | A title for the defined query. | **Required** |
-| `description` | A description for the defined query. | |
 | `query` | Query to filter the Elasticsearch results in query string syntax. | **Required** |
 | `from` | Start time for the query. | `now-15m` |
 | `to` | End time for the query. | `now` |
@@ -181,7 +180,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    kubenav.io/elasticsearch-queries: '[{"title": "Pod Logs", "description": "All logs for the current Pod.", "query": "kubernetes.namespace: $.metadata.namespace AND kubernetes.pod.name: $.metadata.name ", "selectedFields": "kubernetes.labels.app,host.name"}]'
+    kubenav.io/elasticsearch-queries: '[{"title": "All logs for the current Pod", "query": "kubernetes.namespace: $.metadata.namespace AND kubernetes.pod.name: $.metadata.name ", "selectedFields": "kubernetes.labels.app,host.name"}]'
   labels:
     app: kubenav
   name: kubenav-58d7f97f9f-462xd

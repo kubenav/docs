@@ -19,7 +19,6 @@ The annotation requires a JSON array, where each item in the array can use the f
 | Field | Description | Default Value |
 | ----- | ----------- | ------------- |
 | `title` | A title for the defined trace. | **Required** |
-| `description` | A description for the defined trace. | |
 | `service` | Service to get traces for. | **Required** |
 | `operation` | The operation for which the traces should be retrieved. When this isn't provided traces are retrieved for all operations. | |
 | `tags` | Filter traces by tags, for example `http.status_code=200 error=true` | |
@@ -35,7 +34,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    kubenav.io/jaeger-traces: '[{"title": "Traces for details.bookinfo", "description": "All traces for the details.bookinfo service.", "service": "details.bookinfo"}]'
+    kubenav.io/jaeger-traces: '[{"title": "Traces for details.bookinfo", "service": "details.bookinfo"}]'
   labels:
     app: bookinfo
   name: details-v1-1520924117-48z17

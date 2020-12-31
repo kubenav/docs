@@ -25,30 +25,43 @@ kubenav supports custom dashboards via the Prometheus plugin. To create a dashbo
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nats-dashboard
+  # Name of the ConfigMap. The name is used as reference in the "kubenav.io/prometheus-dashboards" annotation.
+  name: nginx-ingress-dashboard
   # Dashboards namespace, which is configured in the settings via "Dashboards Namespace" or via the "--plugin.prometheus.dashboards-namespace" command-line flag.
   namespace: kubenav
   labels:
     # Required label, so that kubenav can found the dashboard.
-    kubenav.io/dashboard: "true"
+    kubenav.io/prometheus-dashboard: "true"
 data:
   # Title of the dashboard.
-  title: "NATS"
+  title: "NGINX Ingress Controller"
   # Description of the dashboard.
-  description: "Dashboard for NATS Metrics"
+  description: "Dashboard for NGINX Ingress Controller Metrics"
   # Array of variables.
   variables: |
     [
       {
         "name": "Namespace",
-        "label": "namespace",
-        "query": "gnatsd_varz_subscriptions",
-        "allowAll": false
+        "label": "controller_namespace",
+        "query": "nginx_ingress_controller_config_hash",
+        "allowAll": true
       },
       {
-        "name": "Pod",
-        "label": "pod",
-        "query": "gnatsd_varz_subscriptions{namespace=~\"{{ .Namespace }}\"}",
+        "name": "ControllerClass",
+        "label": "controller_class",
+        "query": "nginx_ingress_controller_config_hash{namespace=~\"{{ .Namespace }}\"}",
+        "allowAll": true
+      },
+      {
+        "name": "Controller",
+        "label": "controller_pod",
+        "query": "nginx_ingress_controller_config_hash{namespace=~\"{{ .Namespace }}\",controller_class=~\"{{ .ControllerClass }}\"}",
+        "allowAll": true
+      },
+      {
+        "name": "Ingress",
+        "label": "ingress",
+        "query": "nginx_ingress_controller_requests{namespace=~\"{{ .Namespace }}\",controller_class=~\"{{ .ControllerClass }}\", controller_pod=~\"{{ .Controller }}\"}",
         "allowAll": true
       }
     ]
@@ -56,7 +69,79 @@ data:
   charts: |
     [
       {
-        "title": "Server CPU",
+        "title": "Controller Request Volume",
+        "unit": "ops",
+        "size": {
+          "xs": "12",
+          "sm": "12",
+          "md": "4",
+          "lg": "4",
+          "xl": "4"
+        },
+        "type": "singlestat",
+        "queries": [
+          {
+            "label": "Request Volume",
+            "query": "round(sum(irate(nginx_ingress_controller_requests{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\"}[2m])), 0.001)"
+          }
+        ]
+      },
+      {
+        "title": "Controller Connections",
+        "unit": "",
+        "size": {
+          "xs": "12",
+          "sm": "12",
+          "md": "4",
+          "lg": "4",
+          "xl": "4"
+        },
+        "type": "singlestat",
+        "queries": [
+          {
+            "label": "Controller Connections",
+            "query": "sum(avg_over_time(nginx_ingress_controller_nginx_process_connections{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\"}[2m]))"
+          }
+        ]
+      },
+      {
+        "title": "Controller Success Rate",
+        "unit": "%",
+        "size": {
+          "xs": "12",
+          "sm": "12",
+          "md": "4",
+          "lg": "4",
+          "xl": "4"
+        },
+        "type": "singlestat",
+        "queries": [
+          {
+            "label": "Controller Success Rate",
+            "query": "sum(rate(nginx_ingress_controller_requests{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\",status!~\"[4-5].*\"}[2m])) / sum(rate(nginx_ingress_controller_requests{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\"}[2m])) * 100"
+          }
+        ]
+      },
+      {
+        "title": "Ingress Request Volume",
+        "unit": "reqps",
+        "size": {
+          "xs": "12",
+          "sm": "12",
+          "md": "12",
+          "lg": "6",
+          "xl": "6"
+        },
+        "type": "area",
+        "queries": [
+          {
+            "label": "{{ .ingress }}",
+            "query": "round(sum(irate(nginx_ingress_controller_requests{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\",ingress=~\"{{ .Ingress }}\"}[2m])) by (ingress), 0.001)"
+          }
+        ]
+      },
+      {
+        "title": "Ingress Success Rate",
         "unit": "%",
         "size": {
           "xs": "12",
@@ -68,26 +153,84 @@ data:
         "type": "area",
         "queries": [
           {
-            "label": "{{ .pod }}",
-            "query": "gnatsd_varz_cpu{namespace=~\"{{ .Namespace }}\",pod=~\"{{ .Pod }}\"}"
+            "label": "{{ .ingress }}",
+            "query": "sum(rate(nginx_ingress_controller_requests{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\",ingress=~\"{{ .Ingress }}\",status!~\"[4-5].*\"}[2m])) by (ingress) / sum(rate(nginx_ingress_controller_requests{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\",ingress=~\"{{ .Ingress }}\"}[2m])) by (ingress) * 100"
           }
         ]
       },
       {
-        "title": "Server Memory",
+        "title": "Network I/O Pressure",
+        "unit": "MB/s",
+        "size": {
+          "xs": "12",
+          "sm": "12",
+          "md": "12",
+          "lg": "4",
+          "xl": "4"
+        },
+        "type": "area",
+        "queries": [
+          {
+            "label": "Received",
+            "query": "sum (irate (nginx_ingress_controller_request_size_sum{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\"}[2m])) / 1024 / 1024"
+          },
+          {
+            "label": "Sent",
+            "query": "- sum (irate (nginx_ingress_controller_response_size_sum{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\"}[2m])) / 1024 / 1024"
+          }
+        ]
+      },
+      {
+        "title": "Average Memory Usage",
         "unit": "MiB",
         "size": {
           "xs": "12",
           "sm": "12",
           "md": "12",
-          "lg": "6",
-          "xl": "6"
+          "lg": "4",
+          "xl": "4"
         },
         "type": "area",
         "queries": [
           {
-            "label": "{{ .pod }}",
-            "query": "gnatsd_varz_mem{namespace=~\"{{ .Namespace }}\",pod=~\"{{ .Pod }}\"} / 1024 / 1024"
+            "label": "NGINX",
+            "query": "avg(nginx_ingress_controller_nginx_process_resident_memory_bytes{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\"}) / 1024 / 1024"
+          }
+        ]
+      },
+      {
+        "title": "Average CPU Usage",
+        "unit": "Cores",
+        "size": {
+          "xs": "12",
+          "sm": "12",
+          "md": "12",
+          "lg": "4",
+          "xl": "4"
+        },
+        "type": "area",
+        "queries": [
+          {
+            "label": "NGINX",
+            "query": "sum (rate (nginx_ingress_controller_nginx_process_cpu_seconds_total{controller_pod=~\"{{ .Controller }}\",controller_class=~\"{{ .ControllerClass }}\",namespace=~\"{{ .Namespace }}\"}[2m]))"
+          }
+        ]
+      },
+      {
+        "title": "Ingress Certificate Expiry",
+        "unit": "Days",
+        "size": {
+          "xs": "12",
+          "sm": "12",
+          "md": "12",
+          "lg": "12",
+          "xl": "12"
+        },
+        "type": "area",
+        "queries": [
+          {
+            "label": "{{ .host }}",
+            "query": "(avg(nginx_ingress_controller_ssl_expire_time_seconds{namespace=~\"{{ .Namespace }}\"}) by (host) - time()) / 60 / 60 / 24"
           }
         ]
       }
@@ -115,7 +258,7 @@ data:
 
 ### Annotations
 
-You can also add a reference to a dashboard within a resource. For that you have to add the `kubenav.io/dashboards` annotation to the resource. The value is a comma seperated list of the ConfigMap names of the dashboards plus an optional query parameter.
+You can also add a reference to a dashboard within a resource. For that you have to add the `kubenav.io/prometheus-dashboards` annotation to the resource. The value is a comma seperated list of the ConfigMap names of the dashboards plus an optional query parameter.
 
 For example to add the *NGINX Ingress Controller* dashboard to an Ingress, the resource has to look as follows:
 
@@ -127,7 +270,7 @@ metadata:
     # Add the NGINX Ingress Controller and NGINX Ingress Controller: Request Handling Performance dashboard to the Ingress.
     # Set the Ingress variable to kubenav, so that the Ingress is selected in the dashboard.
     # The second dashboard uses the name of the Ingress as value for the Ingress variable.
-    kubenav.io/dashboards: nginx-ingress-dashboard?Ingress=kubenav,nginx-ingress-request-handling-performance-dashboard?Ingress=$.metadata.name
+    kubenav.io/prometheus-dashboards: nginx-ingress-dashboard?Ingress=kubenav,nginx-ingress-request-handling-performance-dashboard?Ingress=$.metadata.name
     kubernetes.io/ingress.class: nginx
   name: kubenav
   namespace: kubenav
@@ -148,8 +291,12 @@ In the [kubenav/deploy](https://github.com/kubenav/deploy/tree/master/dashboards
 
 - `blackbox-exporter-dashboard.yaml`: Dashboard for [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter)
 - `cert-manager-dashboard.yaml`: Dashboard for [cert-manager](https://cert-manager.io)
+- `elasticsearch-dashboard.yaml`: Dashboarf for [Elasticsearch Exporter](https://github.com/justwatchcom/elasticsearch_exporter)
 - `filebeat-dashboard.yaml`: Dashboard for [Filebeat](https://github.com/trustpilot/beat-exporter)
 - `jaeger-dashboard.yaml`: Dashboard for [Jaeger](https://www.jaegertracing.io)
+- `mongodb-overview-dashboard.yaml`: Overview dashboard for [MongoDB Exporter](https://github.com/percona/mongodb_exporter)
+- `mongodb-replicaset-dashboard.yaml`: Replica Set dashboard for [MongoDB Exporter](https://github.com/percona/mongodb_exporter)
+- `mongodb-wiredtiger-dashboard.yaml`: WiredTiger dashboard for [MongoDB Exporter](https://github.com/percona/mongodb_exporter)
 - `nats-dashboard.yaml`: Dashboard for [NATS](https://nats.io)
 - `nginx-ingress-dashboard.yaml`: Dashboard for [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 - `nginx-ingress-request-handling-performance-dashboard.yaml`: Performance dashboard for [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
