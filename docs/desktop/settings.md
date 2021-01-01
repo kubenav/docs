@@ -50,7 +50,7 @@ kubenav provides multiple settings, to customize the look and usage of the app.
 | Setting | Description | Default |
 | ------- | ----------- | ------- |
 | Enabled | Enables or disables the Jaeger plugin. | `false` |
-| Namespace | The namespace, where Jaeger is running. | `jaeger` |
+| Namespace | The namespace, where Jaeger is running. | `tracing` |
 | Selector | The selector, which matches the Jaeger Pod. | `app=jaeger,app.kubernetes.io/component=query` |
 | Port | The port, where the Jaeger API is exposed. | `16686` |
 | Username | Username for Jaeger, when the Jaeger endpoint is protected via Basic Authentication. | |
