@@ -3,7 +3,7 @@ site_description: kubenav is the navigator for your Kubernetes clusters right in
 repo_name: kubenav/kubenav
 repo_url: https://github.com/kubenav/kubenav
 edit_uri: https://github.com/kubenav/docs/edit/master/docs/
-copyright: Rico Berger
+copyright: Copyright © 2021 Rico Berger
 
 theme:
   name: material

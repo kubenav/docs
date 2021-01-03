@@ -16,7 +16,7 @@ helm upgrade --install --namespace kubenav kubenav kubenav/kubenav
 | ----- | ----------- | ------- |
 | `replicaCount` | Number of replicas which should be created. | `1` |
 | `image.repository` | The repository of the Docker image. | `kubenav/kubenav` |
-| `image.tag` | The tag of the Docker image which should be used. | `3.2.0` |
+| `image.tag` | The tag of the Docker image which should be used. | `3.3.0` |
 | `image.pullPolicy` | The pull policy for the Docker image, | `IfNotPresent` |
 | `imagePullSecrets` | Secrets which can be used to pull the Docker image. | `[]` |
 | `nameOverride` | Expand the name of the chart. | `""` |
@@ -24,7 +24,18 @@ helm upgrade --install --namespace kubenav kubenav kubenav/kubenav
 | `deployment.mode` | Set the mode how kubenav should be deployed. This must be `incluster` or `kubeconfig`. | `incluster` |
 | `deployment.kubeconfig` | When the `kubeconfig` mode is used. This must be a base64 encoded Kubeconfig file. | `""` |
 | `plugins.prometheus.enabled` | Enables the Prometheus plugin. | `false` |
-| `plugins.prometheus.address` | The address of Prometheus. | `""` |
+| `plugins.prometheus.address` | The address of Prometheus. | `http://prometheus.monitoring.svc.cluster.local:9090` |
+| `plugins.prometheus.username` | The username for Prometheus. | `""` |
+| `plugins.prometheus.password` | The password for Prometheus. | `""` |
+| `plugins.prometheus.dashboardsNamespace` | The namespace which is used for Prometheus dashboards. | `kubenav` |
+| `plugins.elasticsearch.enabled` | Enables the Elasticsearch plugin. | `false` |
+| `plugins.elasticsearch.address` | The address of Elasticsearch. | `http://elasticsearch.logging.svc.cluster.local:9200` |
+| `plugins.elasticsearch.username` | The username for Elasticsearch. | `""` |
+| `plugins.elasticsearch.password` | The password for Elasticsearch. | `""` |
+| `plugins.jaeger.enabled` | Enables the Jaeger plugin. | `false` |
+| `plugins.jaeger.address` | The address of Jaeger. | `http://jaeger-query.tracing.svc.cluster.local:16686` |
+| `plugins.jaeger.username` | The username for Jaeger. | `""` |
+| `plugins.jaeger.password` | The password for Jaeger. | `""` |
 | `rbac.create` | Create the cluster role and cluster role binding. | `true` |
 | `rbac.name` | The name of the cluster role and cluster role binding, which should be created/used by kubenav. | `kubenav` |
 | `rbac.name` | The permissions which kubenav should have. This must be `admin` or `viewer`. | `admin` |
