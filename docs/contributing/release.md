@@ -8,7 +8,7 @@ make release-minor
 make release-major
 ```
 
-When the tag is pushed the changelog will be generated via GitHub Action and saved to the [CHANGELOG.md](./CHANGELOG.md) file. When the changelog was generated a new GitHub release can be created with the following naming scheme and the changelog for the current tag as description:
+When the tag is pushed the changelog will be generated via GitHub Action and saved to the [CHANGELOG.md](https://github.com/kubenav/kubenav/blob/master/CHANGELOG.md) file. When the changelog was generated a new GitHub release can be created with the following naming scheme and the changelog for the current tag as description:
 
 ```txt
 Version <TAG> (yyyy-mm-dd)
