@@ -9,4 +9,7 @@ You can also import a Kubeconfig file to add a new cluster to the kubenav app.
 Make sure that your Kubeconfig file does not contains paths to the certificate. Instead it should contain the base64 encoded certificate. For example: When your Kubeconfig file has a field `certificate-authority` with the path to a certificate, you have to replace this field with `certificate-authority-data` and the base64 encoded value of the certificate.
 
 !!! attention
+    If you want to select your Kubeconfig via the file dialog ensure that the filename has a `.yaml` or `.yml` extension.
+
+!!! attention
     Make sure that the Kubeconfig file only contains clusters and users, which are not using a Cloud Provider or OIDC for the cluster access. The import for such Kubeconfig files will fail. Please use one of the available Cloud Providers to import such clusters.
