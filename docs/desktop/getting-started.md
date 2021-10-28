@@ -9,3 +9,5 @@ We are providing prebuilt binaries for macOS, Linux and Windows. The binaries fo
 </div>
 
 When you want to test new features you can also use a build from the nightly schedule. The nightly builds are created via GitHub Action and can be found at [https://github.com/kubenav/kubenav/actions](https://github.com/kubenav/kubenav/actions?query=workflow%3ABuild+event%3Aschedule).
+
+If you are using homebrew in a Mac, you can also install kubenav with `brew install kubenav`
