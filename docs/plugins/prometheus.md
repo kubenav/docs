@@ -293,7 +293,7 @@ In the [kubenav/deploy](https://github.com/kubenav/deploy/tree/master/dashboards
 - `cert-manager-dashboard.yaml`: Dashboard for [cert-manager](https://cert-manager.io)
 - `elasticsearch-dashboard.yaml`: Dashboarf for [Elasticsearch Exporter](https://github.com/justwatchcom/elasticsearch_exporter)
 - `filebeat-dashboard.yaml`: Dashboard for [Filebeat](https://github.com/trustpilot/beat-exporter)
-- `go-dashboard.yaml`: Dashboard for [Node.js](https://github.com/prometheus/client_golang)
+- `go-dashboard.yaml`: Dashboard for [Go](https://github.com/prometheus/client_golang)
 - `jaeger-dashboard.yaml`: Dashboard for [Jaeger](https://www.jaegertracing.io)
 - `jetty-dashboard.yaml`: Dashboard for [Java](https://github.com/prometheus/client_java)
 - `jvm-dashboard.yaml`: Dashboard for [Java](https://github.com/prometheus/client_java)
